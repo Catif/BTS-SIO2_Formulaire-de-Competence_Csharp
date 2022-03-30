@@ -1,0 +1,10 @@
+C:\Users\Bradl\Documents\GitHub\BTS-SIO2_TP-Formulaire-de-Competence_Csharp\Formulaire de Competence\bin\Debug\Formulaire de Competence.exe.config
+C:\Users\Bradl\Documents\GitHub\BTS-SIO2_TP-Formulaire-de-Competence_Csharp\Formulaire de Competence\bin\Debug\Formulaire de Competence.exe
+C:\Users\Bradl\Documents\GitHub\BTS-SIO2_TP-Formulaire-de-Competence_Csharp\Formulaire de Competence\bin\Debug\Formulaire de Competence.pdb
+C:\Users\Bradl\Documents\GitHub\BTS-SIO2_TP-Formulaire-de-Competence_Csharp\Formulaire de Competence\obj\Debug\Formulaire de Competence.csproj.AssemblyReference.cache
+C:\Users\Bradl\Documents\GitHub\BTS-SIO2_TP-Formulaire-de-Competence_Csharp\Formulaire de Competence\obj\Debug\Formulaire_de_Competence.Properties.Resources.resources
+C:\Users\Bradl\Documents\GitHub\BTS-SIO2_TP-Formulaire-de-Competence_Csharp\Formulaire de Competence\obj\Debug\Formulaire de Competence.csproj.GenerateResource.cache
+C:\Users\Bradl\Documents\GitHub\BTS-SIO2_TP-Formulaire-de-Competence_Csharp\Formulaire de Competence\obj\Debug\Formulaire de Competence.csproj.CoreCompileInputs.cache
+C:\Users\Bradl\Documents\GitHub\BTS-SIO2_TP-Formulaire-de-Competence_Csharp\Formulaire de Competence\obj\Debug\Formulaire de Competence.exe
+C:\Users\Bradl\Documents\GitHub\BTS-SIO2_TP-Formulaire-de-Competence_Csharp\Formulaire de Competence\obj\Debug\Formulaire de Competence.pdb
+C:\Users\Bradl\Documents\GitHub\BTS-SIO2_TP-Formulaire-de-Competence_Csharp\Formulaire de Competence\obj\Debug\Formulaire_de_Competence.Form.resources
