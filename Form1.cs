@@ -26,7 +26,7 @@ namespace Formulaire_de_Competence
             tabControl.SelectedTab = unOnglet;
         }
 
-        public void setPlaceHolder(TextBox input, string placeHolder, bool entrer)
+        public void setPlaceHolder(TextBox input, string placeHolder, bool password, bool entrer)
         {
             if (entrer)
             {
@@ -34,12 +34,18 @@ namespace Formulaire_de_Competence
                 {
                     input.Text = "";
                     input.ForeColor = Color.FromArgb(0, 0, 0);
+
+                    if(password)
+                        input.PasswordChar = '*';
                 }
             }
             else
             {
                 if (input.Text == "")
                 {
+                    if(password)
+                        input.PasswordChar = '\0';
+
                     input.Text = placeHolder;
                     input.ForeColor = Color.FromArgb(117, 117, 117);
                 }
@@ -64,22 +70,22 @@ namespace Formulaire_de_Competence
 
         private void input_mail_Enter(object sender, EventArgs e)
         {
-            setPlaceHolder(input_mail, "Email professionel", true);
+            setPlaceHolder(input_mail, "Email professionel", false, true);
         }
 
         private void input_mail_Leave(object sender, EventArgs e)
         {
-            setPlaceHolder(input_mail, "Email professionel", false);
+            setPlaceHolder(input_mail, "Email professionel", false, false);
         }
 
         private void input_password_Enter(object sender, EventArgs e)
         {
-            setPlaceHolder(input_password, "Mot de passe", true);
+            setPlaceHolder(input_password, "Mot de passe", true, true);
         }
 
         private void input_password_Leave(object sender, EventArgs e)
         {
-            setPlaceHolder(input_password, "Mot de passe", false);
+            setPlaceHolder(input_password, "Mot de passe", true, false);
         }
 
         private void btn_return_login_Click(object sender, EventArgs e)
