@@ -246,6 +246,7 @@ namespace Formulaire_de_Competence
             this.btn_login.TabIndex = 6;
             this.btn_login.Text = "Connexion";
             this.btn_login.UseVisualStyleBackColor = false;
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
             // input_mail
             // 

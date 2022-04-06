@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Formulaire_de_Competence
 {
@@ -52,6 +53,12 @@ namespace Formulaire_de_Competence
             }
         }
 
+        private bool ValidMail(string mail_address)
+        {
+            Regex myRegex = new Regex(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$", RegexOptions.IgnoreCase);
+            return myRegex.IsMatch(mail_address);
+        }
+
         private void btn_redirec_AzureBDDPerso_Click(object sender, EventArgs e)
         {
             changeSelectedTab(tab_login);
@@ -86,6 +93,14 @@ namespace Formulaire_de_Competence
         private void input_password_Leave(object sender, EventArgs e)
         {
             setPlaceHolder(input_password, "Mot de passe", true, false);
+        }
+
+        private void btn_login_Click(object sender, EventArgs e)
+        {
+            if (ValidMail(input_mail.Text) && input_password.Text != null)
+            {
+
+            }
         }
 
         private void btn_return_login_Click(object sender, EventArgs e)
