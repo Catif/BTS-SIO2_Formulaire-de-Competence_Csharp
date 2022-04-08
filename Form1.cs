@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,11 +15,15 @@ namespace Formulaire_de_Competence
     public partial class Form : System.Windows.Forms.Form
     {
         private TabPage step;
+        private SqlConnection BDD = new SqlConnection(@"Data Source=catif1-euw.database.windows.net;Initial Catalog=Bradley-BARBIER_Competence;User ID=readerOnlyDataSQL;Password=M0t2p4ssPU1SS4NT");
+        private SqlDataReader dataReader;
+
 
         public Form()
         {
             InitializeComponent();
             step = tabControl.SelectedTab;
+            BDD.Open();
         }
 
         public void changeSelectedTab(TabPage unOnglet)
@@ -99,7 +104,24 @@ namespace Formulaire_de_Competence
         {
             if (ValidMail(input_mail.Text) && input_password.Text != null)
             {
+                SqlCommand command = new SqlCommand("", BDD);
 
+                command.CommandText = "SELECT * FROM etudiant WHERE mail_etud = @mail";
+                SqlParameter mailParameter = new SqlParameter("@mail", SqlDbType.NVarChar, 100);
+                mailParameter.Value = input_mail.Text;
+                command.Parameters.Add(mailParameter);
+
+
+                command.Prepare();
+
+                dataReader = command.ExecuteReader();
+
+                String Output = "";
+                while (dataReader.Read())
+                {
+                    Output = Output + dataReader.GetValue(0);
+                }
+                MessageBox.Show(Output);
             }
         }
 
