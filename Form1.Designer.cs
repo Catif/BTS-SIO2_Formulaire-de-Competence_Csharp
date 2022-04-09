@@ -29,6 +29,15 @@ namespace Formulaire_de_Competence
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tab_choiceBDD = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
@@ -48,10 +57,31 @@ namespace Formulaire_de_Competence
             this.tab_ShowCompetence = new System.Windows.Forms.TabPage();
             this.btn_return_skills = new System.Windows.Forms.Button();
             this.tab_Apropos = new System.Windows.Forms.TabPage();
+            this.tabControl_Skills = new System.Windows.Forms.TabControl();
+            this.tabSkills_Competence = new System.Windows.Forms.TabPage();
+            this.tabSkills_Savoir = new System.Windows.Forms.TabPage();
+            this.tabSkills_Indicateur = new System.Windows.Forms.TabPage();
+            this.dataGrid_Competence = new System.Windows.Forms.DataGridView();
+            this.dataGrid_Savoir = new System.Windows.Forms.DataGridView();
+            this.dataGrid_Indicateur = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.N_Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Libel_Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.tab_choiceBDD.SuspendLayout();
             this.tab_login.SuspendLayout();
             this.tab_ShowCompetence.SuspendLayout();
+            this.tabControl_Skills.SuspendLayout();
+            this.tabSkills_Competence.SuspendLayout();
+            this.tabSkills_Savoir.SuspendLayout();
+            this.tabSkills_Indicateur.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Competence)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Savoir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Indicateur)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -286,6 +316,8 @@ namespace Formulaire_de_Competence
             // tab_ShowCompetence
             // 
             this.tab_ShowCompetence.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
+            this.tab_ShowCompetence.Controls.Add(this.label5);
+            this.tab_ShowCompetence.Controls.Add(this.tabControl_Skills);
             this.tab_ShowCompetence.Controls.Add(this.btn_return_skills);
             this.tab_ShowCompetence.Location = new System.Drawing.Point(4, 38);
             this.tab_ShowCompetence.Name = "tab_ShowCompetence";
@@ -317,6 +349,206 @@ namespace Formulaire_de_Competence
             this.tab_Apropos.TabIndex = 3;
             this.tab_Apropos.Text = "A propos";
             // 
+            // tabControl_Skills
+            // 
+            this.tabControl_Skills.Controls.Add(this.tabSkills_Competence);
+            this.tabControl_Skills.Controls.Add(this.tabSkills_Savoir);
+            this.tabControl_Skills.Controls.Add(this.tabSkills_Indicateur);
+            this.tabControl_Skills.ItemSize = new System.Drawing.Size(150, 25);
+            this.tabControl_Skills.Location = new System.Drawing.Point(-4, 73);
+            this.tabControl_Skills.Name = "tabControl_Skills";
+            this.tabControl_Skills.Padding = new System.Drawing.Point(60, 3);
+            this.tabControl_Skills.SelectedIndex = 0;
+            this.tabControl_Skills.Size = new System.Drawing.Size(800, 339);
+            this.tabControl_Skills.TabIndex = 3;
+            // 
+            // tabSkills_Competence
+            // 
+            this.tabSkills_Competence.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabSkills_Competence.Controls.Add(this.dataGrid_Competence);
+            this.tabSkills_Competence.ForeColor = System.Drawing.Color.Black;
+            this.tabSkills_Competence.Location = new System.Drawing.Point(4, 29);
+            this.tabSkills_Competence.Name = "tabSkills_Competence";
+            this.tabSkills_Competence.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSkills_Competence.Size = new System.Drawing.Size(792, 306);
+            this.tabSkills_Competence.TabIndex = 0;
+            this.tabSkills_Competence.Text = "Compétence";
+            // 
+            // tabSkills_Savoir
+            // 
+            this.tabSkills_Savoir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabSkills_Savoir.Controls.Add(this.dataGrid_Savoir);
+            this.tabSkills_Savoir.ForeColor = System.Drawing.Color.Black;
+            this.tabSkills_Savoir.Location = new System.Drawing.Point(4, 29);
+            this.tabSkills_Savoir.Name = "tabSkills_Savoir";
+            this.tabSkills_Savoir.Size = new System.Drawing.Size(792, 306);
+            this.tabSkills_Savoir.TabIndex = 1;
+            this.tabSkills_Savoir.Text = "Savoir";
+            // 
+            // tabSkills_Indicateur
+            // 
+            this.tabSkills_Indicateur.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabSkills_Indicateur.Controls.Add(this.dataGrid_Indicateur);
+            this.tabSkills_Indicateur.ForeColor = System.Drawing.Color.Black;
+            this.tabSkills_Indicateur.Location = new System.Drawing.Point(4, 29);
+            this.tabSkills_Indicateur.Name = "tabSkills_Indicateur";
+            this.tabSkills_Indicateur.Size = new System.Drawing.Size(792, 306);
+            this.tabSkills_Indicateur.TabIndex = 2;
+            this.tabSkills_Indicateur.Text = "Indicateur";
+            // 
+            // dataGrid_Competence
+            // 
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGrid_Competence.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.dataGrid_Competence.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataGrid_Competence.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_Competence.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            this.dataGrid_Competence.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.N_Item,
+            this.Libel_Item});
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGrid_Competence.DefaultCellStyle = dataGridViewCellStyle18;
+            this.dataGrid_Competence.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGrid_Competence.Location = new System.Drawing.Point(3, 3);
+            this.dataGrid_Competence.Name = "dataGrid_Competence";
+            this.dataGrid_Competence.Size = new System.Drawing.Size(786, 300);
+            this.dataGrid_Competence.TabIndex = 0;
+            // 
+            // dataGrid_Savoir
+            // 
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGrid_Savoir.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGrid_Savoir.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataGrid_Savoir.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_Savoir.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGrid_Savoir.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGrid_Savoir.DefaultCellStyle = dataGridViewCellStyle12;
+            this.dataGrid_Savoir.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGrid_Savoir.Location = new System.Drawing.Point(0, 0);
+            this.dataGrid_Savoir.Name = "dataGrid_Savoir";
+            this.dataGrid_Savoir.Size = new System.Drawing.Size(792, 306);
+            this.dataGrid_Savoir.TabIndex = 0;
+            // 
+            // dataGrid_Indicateur
+            // 
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGrid_Indicateur.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            this.dataGrid_Indicateur.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataGrid_Indicateur.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_Indicateur.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.dataGrid_Indicateur.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGrid_Indicateur.DefaultCellStyle = dataGridViewCellStyle15;
+            this.dataGrid_Indicateur.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGrid_Indicateur.Location = new System.Drawing.Point(0, 0);
+            this.dataGrid_Indicateur.Name = "dataGrid_Indicateur";
+            this.dataGrid_Indicateur.Size = new System.Drawing.Size(792, 306);
+            this.dataGrid_Indicateur.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Gadugi", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(180, 18);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(440, 24);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Voici les Compétences, Savoirs et Indicateur !";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // N_Item
+            // 
+            this.N_Item.HeaderText = "N°Item";
+            this.N_Item.Name = "N_Item";
+            this.N_Item.Width = 88;
+            // 
+            // Libel_Item
+            // 
+            this.Libel_Item.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Libel_Item.HeaderText = "Libelé de l\'item";
+            this.Libel_Item.Name = "Libel_Item";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "N° Item";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 92;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Libélé de l\'Item";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "N° Item";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 92;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Libélé de l\'Item";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -338,6 +570,13 @@ namespace Formulaire_de_Competence
             this.tab_login.PerformLayout();
             this.tab_ShowCompetence.ResumeLayout(false);
             this.tab_ShowCompetence.PerformLayout();
+            this.tabControl_Skills.ResumeLayout(false);
+            this.tabSkills_Competence.ResumeLayout(false);
+            this.tabSkills_Savoir.ResumeLayout(false);
+            this.tabSkills_Indicateur.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Competence)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Savoir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Indicateur)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -363,6 +602,20 @@ namespace Formulaire_de_Competence
         private System.Windows.Forms.Button btn_return_login;
         private System.Windows.Forms.Label text_errorLogin;
         private System.Windows.Forms.Button btn_return_skills;
+        private System.Windows.Forms.TabControl tabControl_Skills;
+        private System.Windows.Forms.TabPage tabSkills_Competence;
+        private System.Windows.Forms.DataGridView dataGrid_Competence;
+        private System.Windows.Forms.TabPage tabSkills_Savoir;
+        private System.Windows.Forms.DataGridView dataGrid_Savoir;
+        private System.Windows.Forms.TabPage tabSkills_Indicateur;
+        private System.Windows.Forms.DataGridView dataGrid_Indicateur;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn N_Item;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Libel_Item;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }
 

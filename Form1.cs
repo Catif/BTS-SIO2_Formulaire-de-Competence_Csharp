@@ -128,11 +128,16 @@ namespace Formulaire_de_Competence
                         BDD.Close();
                         BDDChoice = "";
                         BDD = new SqlConnection(@"");
+
                         changeSelectedTab(tab_choiceBDD);
+
                         input_mail.Text = "";
                         input_password.Text = "";
                         setPlaceHolder(input_mail, "Email professionel", false, false);
                         setPlaceHolder(input_password, "Mot de passe", true, false);
+
+                        text_errorLogin.Text = "";
+                        text_errorLogin.BackColor = Color.Transparent;
                     }
 
 
@@ -161,6 +166,7 @@ namespace Formulaire_de_Competence
                                         if (BC.Verify(input_password.Text, dataReader.GetString(dataReader.GetOrdinal("MOT_DE_PASSE_ETUD"))))
                                         {
                                             idUser = dataReader.GetInt32(dataReader.GetOrdinal("IDENTIFIANT_ETUD"));
+
                                             changeSelectedTab(tab_ShowCompetence);
                                             input_mail.Text = "";
                                             input_password.Text = "";
@@ -181,6 +187,33 @@ namespace Formulaire_de_Competence
                                         text_errorLogin.BackColor = Color.FromArgb(144, 0, 0);
                                         input_password.Text = "";
                                         setPlaceHolder(input_password, "Mot de passe", true, false);
+                                    }
+                                }
+                                if(idUser != null)
+                                {
+                                    SqlCommand commandSkills = new SqlCommand("SELECT * FROM item_competence", BDD);
+                                    using (SqlDataReader reader = commandSkills.ExecuteReader())
+                                    {
+                                        while (reader.Read())
+                                        {
+                                            dataGrid_Competence.Rows.Add(reader.GetString(reader.GetOrdinal("N_ITEM_COMPETENCE")), reader.GetString(reader.GetOrdinal("LIBEL_ITEM")));
+                                        }
+                                    }
+                                    commandSkills = new SqlCommand("SELECT * FROM item_savoir", BDD);
+                                    using (SqlDataReader reader = commandSkills.ExecuteReader())
+                                    {
+                                        while (reader.Read())
+                                        {
+                                            dataGrid_Savoir.Rows.Add(reader.GetString(reader.GetOrdinal("N_ITEM_SAVOIR")), reader.GetString(reader.GetOrdinal("LIBEL_ITEM")));
+                                        }
+                                    }
+                                    commandSkills = new SqlCommand("SELECT * FROM item_indicateur", BDD);
+                                    using (SqlDataReader reader = commandSkills.ExecuteReader())
+                                    {
+                                        while (reader.Read())
+                                        {
+                                            dataGrid_Indicateur.Rows.Add(reader.GetString(reader.GetOrdinal("N_ITEM_INDICATEUR")), reader.GetString(reader.GetOrdinal("LIBEL_ITEM")));
+                                        }
                                     }
                                 }
                             }
@@ -208,14 +241,16 @@ namespace Formulaire_de_Competence
                     private void btn_return_skills_Click(object sender, EventArgs e)
                     {
                         changeSelectedTab(tab_login);
-                        idUser = null;
+                        idUser = null; 
+                        dataGrid_Competence.Rows.Clear();
+                        dataGrid_Savoir.Rows.Clear();
+                        dataGrid_Indicateur.Rows.Clear();
                     }
+
                 #endregion
 
             #endregion
 
         #endregion
-
-
     }
 }
