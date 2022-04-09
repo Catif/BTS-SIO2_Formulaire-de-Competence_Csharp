@@ -38,18 +38,20 @@ namespace Formulaire_de_Competence
             this.label1 = new System.Windows.Forms.Label();
             this.btn_redirec_AzureBDDPerso = new System.Windows.Forms.Button();
             this.tab_login = new System.Windows.Forms.TabPage();
+            this.text_errorLogin = new System.Windows.Forms.Label();
             this.btn_return_login = new System.Windows.Forms.Button();
-            this.btn_ForgetPassword = new System.Windows.Forms.Button();
             this.input_password = new System.Windows.Forms.TextBox();
             this.btn_login = new System.Windows.Forms.Button();
             this.input_mail = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tab_ShowCompetence = new System.Windows.Forms.TabPage();
+            this.btn_return_skills = new System.Windows.Forms.Button();
             this.tab_Apropos = new System.Windows.Forms.TabPage();
             this.tabControl.SuspendLayout();
             this.tab_choiceBDD.SuspendLayout();
             this.tab_login.SuspendLayout();
+            this.tab_ShowCompetence.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -68,6 +70,7 @@ namespace Formulaire_de_Competence
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(800, 450);
             this.tabControl.TabIndex = 0;
+            this.tabControl.TabStop = false;
             this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             // 
             // tab_choiceBDD
@@ -179,8 +182,8 @@ namespace Formulaire_de_Competence
             // tab_login
             // 
             this.tab_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
+            this.tab_login.Controls.Add(this.text_errorLogin);
             this.tab_login.Controls.Add(this.btn_return_login);
-            this.tab_login.Controls.Add(this.btn_ForgetPassword);
             this.tab_login.Controls.Add(this.input_password);
             this.tab_login.Controls.Add(this.btn_login);
             this.tab_login.Controls.Add(this.input_mail);
@@ -193,6 +196,17 @@ namespace Formulaire_de_Competence
             this.tab_login.TabIndex = 1;
             this.tab_login.Text = "2. Connexion";
             // 
+            // text_errorLogin
+            // 
+            this.text_errorLogin.BackColor = System.Drawing.Color.Transparent;
+            this.text_errorLogin.Font = new System.Drawing.Font("Gadugi", 12F);
+            this.text_errorLogin.ForeColor = System.Drawing.Color.White;
+            this.text_errorLogin.Location = new System.Drawing.Point(200, 33);
+            this.text_errorLogin.Name = "text_errorLogin";
+            this.text_errorLogin.Size = new System.Drawing.Size(400, 50);
+            this.text_errorLogin.TabIndex = 5;
+            this.text_errorLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // btn_return_login
             // 
             this.btn_return_login.AutoSize = true;
@@ -203,32 +217,18 @@ namespace Formulaire_de_Competence
             this.btn_return_login.Location = new System.Drawing.Point(8, 6);
             this.btn_return_login.Name = "btn_return_login";
             this.btn_return_login.Size = new System.Drawing.Size(39, 34);
-            this.btn_return_login.TabIndex = 9;
+            this.btn_return_login.TabIndex = 1;
             this.btn_return_login.Text = "<";
             this.btn_return_login.UseVisualStyleBackColor = false;
             this.btn_return_login.Click += new System.EventHandler(this.btn_return_login_Click);
             // 
-            // btn_ForgetPassword
-            // 
-            this.btn_ForgetPassword.AutoSize = true;
-            this.btn_ForgetPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btn_ForgetPassword.Cursor = System.Windows.Forms.Cursors.No;
-            this.btn_ForgetPassword.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_ForgetPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btn_ForgetPassword.Location = new System.Drawing.Point(250, 284);
-            this.btn_ForgetPassword.Name = "btn_ForgetPassword";
-            this.btn_ForgetPassword.Size = new System.Drawing.Size(300, 33);
-            this.btn_ForgetPassword.TabIndex = 8;
-            this.btn_ForgetPassword.Text = "Mot de passe oublié";
-            this.btn_ForgetPassword.UseVisualStyleBackColor = false;
-            // 
             // input_password
             // 
             this.input_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.input_password.Location = new System.Drawing.Point(200, 210);
+            this.input_password.Location = new System.Drawing.Point(200, 234);
             this.input_password.Name = "input_password";
             this.input_password.Size = new System.Drawing.Size(400, 29);
-            this.input_password.TabIndex = 7;
+            this.input_password.TabIndex = 3;
             this.input_password.Text = "Mot de passe";
             this.input_password.Enter += new System.EventHandler(this.input_password_Enter);
             this.input_password.Leave += new System.EventHandler(this.input_password_Leave);
@@ -240,10 +240,10 @@ namespace Formulaire_de_Competence
             this.btn_login.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_login.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Bold);
             this.btn_login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
-            this.btn_login.Location = new System.Drawing.Point(250, 245);
+            this.btn_login.Location = new System.Drawing.Point(250, 269);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(300, 33);
-            this.btn_login.TabIndex = 6;
+            this.btn_login.TabIndex = 4;
             this.btn_login.Text = "Connexion";
             this.btn_login.UseVisualStyleBackColor = false;
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
@@ -251,10 +251,10 @@ namespace Formulaire_de_Competence
             // input_mail
             // 
             this.input_mail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.input_mail.Location = new System.Drawing.Point(200, 175);
+            this.input_mail.Location = new System.Drawing.Point(200, 199);
             this.input_mail.Name = "input_mail";
             this.input_mail.Size = new System.Drawing.Size(400, 29);
-            this.input_mail.TabIndex = 5;
+            this.input_mail.TabIndex = 2;
             this.input_mail.Text = "Email professionel";
             this.input_mail.Enter += new System.EventHandler(this.input_mail_Enter);
             this.input_mail.Leave += new System.EventHandler(this.input_mail_Leave);
@@ -264,7 +264,7 @@ namespace Formulaire_de_Competence
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Gadugi", 12F);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(44, 114);
+            this.label3.Location = new System.Drawing.Point(44, 138);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(713, 38);
             this.label3.TabIndex = 4;
@@ -277,7 +277,7 @@ namespace Formulaire_de_Competence
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Gadugi", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(306, 77);
+            this.label4.Location = new System.Drawing.Point(306, 101);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(189, 24);
             this.label4.TabIndex = 3;
@@ -286,11 +286,27 @@ namespace Formulaire_de_Competence
             // tab_ShowCompetence
             // 
             this.tab_ShowCompetence.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
+            this.tab_ShowCompetence.Controls.Add(this.btn_return_skills);
             this.tab_ShowCompetence.Location = new System.Drawing.Point(4, 38);
             this.tab_ShowCompetence.Name = "tab_ShowCompetence";
             this.tab_ShowCompetence.Size = new System.Drawing.Size(792, 408);
             this.tab_ShowCompetence.TabIndex = 2;
             this.tab_ShowCompetence.Text = "3. Affichage";
+            // 
+            // btn_return_skills
+            // 
+            this.btn_return_skills.AutoSize = true;
+            this.btn_return_skills.BackColor = System.Drawing.Color.White;
+            this.btn_return_skills.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_return_skills.Font = new System.Drawing.Font("Gadugi", 15F, System.Drawing.FontStyle.Bold);
+            this.btn_return_skills.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
+            this.btn_return_skills.Location = new System.Drawing.Point(8, 6);
+            this.btn_return_skills.Name = "btn_return_skills";
+            this.btn_return_skills.Size = new System.Drawing.Size(39, 34);
+            this.btn_return_skills.TabIndex = 2;
+            this.btn_return_skills.Text = "<";
+            this.btn_return_skills.UseVisualStyleBackColor = false;
+            this.btn_return_skills.Click += new System.EventHandler(this.btn_return_skills_Click);
             // 
             // tab_Apropos
             // 
@@ -320,6 +336,8 @@ namespace Formulaire_de_Competence
             this.tab_choiceBDD.PerformLayout();
             this.tab_login.ResumeLayout(false);
             this.tab_login.PerformLayout();
+            this.tab_ShowCompetence.ResumeLayout(false);
+            this.tab_ShowCompetence.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -340,10 +358,11 @@ namespace Formulaire_de_Competence
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox input_mail;
-        private System.Windows.Forms.Button btn_ForgetPassword;
         private System.Windows.Forms.TextBox input_password;
         private System.Windows.Forms.Button btn_login;
         private System.Windows.Forms.Button btn_return_login;
+        private System.Windows.Forms.Label text_errorLogin;
+        private System.Windows.Forms.Button btn_return_skills;
     }
 }
 
